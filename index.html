@@ -3,163 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Шақыру | Exclusive</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>Premium Digital Invitation | Palazzo Di Astana</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
     <style>
         :root {
-            --gold: #D4AF37;
-            --dark: #1a1a1a;
-            --white: #ffffff;
+            --gold: #C5A059;
+            --soft-white: #F9F7F2;
+            --dark-grey: #1a1a1a;
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            margin: 0;
-            padding: 0;
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--dark);
-            color: var(--white);
-            text-align: center;
+            background-color: var(--soft-white);
+            color: var(--dark-grey);
             overflow-x: hidden;
         }
 
-        /* Басты блок */
+        /* HERO SECTION */
         .hero {
             height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://lh5.googleusercontent.com/p/AF1QipNq4I3H-j9tU0hS0_I_6v5_uX-6L5iN8_5u7v4=w1080-h1920-p-k-no') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070') center/cover;
-            padding: 20px;
+            color: white;
+            text-align: center;
         }
 
-        h1 {
+        .hero h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: 4rem;
-            color: var(--gold);
+            font-size: clamp(3rem, 10vw, 5rem);
             margin-bottom: 10px;
+            color: var(--gold);
         }
 
-        .subtitle {
-            font-size: 1.2rem;
+        .hero p {
             letter-spacing: 5px;
             text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
-        /* Таймер блогы */
-        .timer-section {
-            padding: 50px 20px;
-            background: var(--white);
-            color: var(--dark);
-        }
+        /* SECTIONS */
+        section { padding: 80px 20px; text-align: center; }
 
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .time-box {
-            background: var(--gold);
-            color: white;
-            padding: 15px;
-            border-radius: 10px;
-            min-width: 70px;
-        }
-
-        /* Мәліметтер */
-        .details {
-            padding: 60px 20px;
-            line-height: 1.8;
-        }
-
-        .gold-text {
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
             color: var(--gold);
-            font-weight: bold;
         }
 
-        /* Батырмалар */
+        /* PROGRAM */
+        .program { background-color: #fff; }
+        .event-item {
+            display: flex;
+            justify-content: space-between;
+            max-width: 450px;
+            margin: 15px auto;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        /* LOCATION CARD */
+        .location { background-color: var(--soft-white); }
+        .rest-name { font-weight: 600; font-size: 1.4rem; margin-bottom: 10px; }
+        
+        /* BUTTONS */
         .btn {
             display: inline-block;
-            margin-top: 30px;
-            padding: 15px 35px;
-            background-color: var(--gold);
-            color: white;
-            text-decoration: none;
+            margin: 10px;
+            padding: 15px 30px;
             border-radius: 50px;
-            font-weight: bold;
+            text-decoration: none;
+            font-weight: 600;
             transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
         }
+        .btn-gold { background: var(--gold); color: white; }
+        .btn-wa { background: #25D366; color: white; }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.6);
-        }
+        .colors { display: flex; justify-content: center; gap: 15px; margin: 20px 0; }
+        .color-dot { width: 45px; height: 45px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
 
-        footer {
-            padding: 40px;
-            font-size: 0.8rem;
-            opacity: 0.6;
-        }
+        footer { padding: 30px; font-size: 0.8rem; opacity: 0.6; background: #fff; }
     </style>
 </head>
 <body>
 
     <div class="hero">
-        <h1 class="animate__animated animate__fadeInDown">Arman & Ayaru</h1>
-        <p class="subtitle animate__animated animate__fadeInUp">Үйлену тойы</p>
-        <div style="margin-top: 40px;" class="animate__animated animate__bounceIn">
-            <p>15.08.2026</p>
-        </div>
+        <p data-aos="fade-down">Тойымыздың қадірлі қонағы болыңыз</p>
+        <h1 data-aos="zoom-in">Arman & Ayaru</h1>
+        <p data-aos="fade-up">15.08.2026</p>
     </div>
 
-    <div class="timer-section">
-        <h2 style="font-family: 'Great Vibes'; font-size: 2.5rem;">Тойға дейін қалды:</h2>
-        <div class="countdown">
-            <div class="time-box"><span id="days">00</span><br><small>күн</small></div>
-            <div class="time-box"><span id="hours">00</span><br><small>сағат</small></div>
-            <div class="time-box"><span id="minutes">00</span><br><small>мин</small></div>
-        </div>
-    </div>
+    <section class="love-story" data-aos="fade-up">
+        <h2 class="section-title">Құрметті қонақтар!</h2>
+        <p>Сіздерді ұлымыз бен келініміздің шаңырақ көтеру салтанатына арналған ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
+    </section>
 
-    <div class="details">
-        <h2>Құрметті қонақтар!</h2>
-        <p>Сіздерді өміріміздің ең маңызды күні — <br>
-        <span class="gold-text">Үйлену тойымыздың</span> куәсі болуға шақырамыз!</p>
+    <section class="program">
+        <h2 class="section-title" data-aos="fade-up">Той бағдарламасы</h2>
+        <div class="event-item" data-aos="fade-right"><span>18:00</span><span>Қонақтардың жиналуы</span></div>
+        <div class="event-item" data-aos="fade-left"><span>19:00</span><span>Тойдың басталуы</span></div>
+        <div class="event-item" data-aos="fade-right"><span>21:00</span><span>Беташар рәсімі</span></div>
+    </section>
+
+    <section class="location" data-aos="zoom-in">
+        <h2 class="section-title">Мекен-жайымыз</h2>
+        <p class="rest-name">Palazzo Di Astana</p>
+        <p>Астана қаласы, Сығанақ көшесі, 38</p>
+        <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">"Жасыл квартал" ТҮК ауданы</p>
         
-        <p>📍 Мекен-жайымыз: <br>
-        Алматы қаласы, "Royal Palace" мейрамханасы</p>
-        
-        <a href="https://2gis.kz" class="btn">Картадан көру (2GIS)</a>
-        <br>
-        <a href="https://wa.me/77071234567?text=Тойға+барамын" class="btn" style="background: #25D366; box-shadow: none;">WhatsApp-қа жауап беру</a>
-    </div>
+        <div style="margin-top: 30px;">
+            <a href="https://2gis.kz/astana/geo/70000001032123519" class="btn btn-gold" target="_blank">2GIS картамен ашу</a>
+            <br>
+            <a href="https://wa.me/77472465381?text=Сәлеметсіз бе! Тойға міндетті түрде барамыз!" class="btn btn-wa">WhatsApp-қа жауап беру</a>
+        </div>
+    </section>
+
+    <section class="dress-code">
+        <h2 class="section-title" data-aos="fade-up">Дресс-код</h2>
+        <p>Тойымыздың түстік гаммасы:</p>
+        <div class="colors" data-aos="zoom-in">
+            <div class="color-dot" style="background-color: #D4AF37;"></div>
+            <div class="color-dot" style="background-color: #333333;"></div>
+            <div class="color-dot" style="background-color: #E5E4E2;"></div>
+            <div class="color-dot" style="background-color: #F5F5DC;"></div>
+        </div>
+    </section>
 
     <footer>
-        <p>© 2026 жасалған: smart-digital-kz</p>
+        <p>© 2026 Барлық құқықтар қорғалған <br> <strong>smart-digital-kz</strong> агенттігі</p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // Қарапайым таймер логикасы
-        const weddingDate = new Date("Aug 15, 2026 19:00:00").getTime();
-
-        const x = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-
-            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-            if (distance < 0) {
-                clearInterval(x);
-                document.querySelector(".countdown").innerHTML = "Той басталды!";
-            }
-        }, 1000);
+        AOS.init({ duration: 1000, once: true });
     </script>
 </body>
 </html>
+
