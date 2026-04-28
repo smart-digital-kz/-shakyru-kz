@@ -1,165 +1,112 @@
-<!DOCTYPE html>
-<html lang="kk">
+<!DOCTYPE html><html lang="kk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Жасұлан & Альбина | Wedding</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root { --gold: #B8904D; --cream: #FCF9F5; --dark: #2C2C2C; --white: #FFFFFF; }
-        * { box-sizing: border-box; scroll-behavior: smooth; }
-        body { margin: 0; font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--dark); text-align: center; }
-        
-        /* Hero Section */
-        .hero { 
-            height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1000') center/cover;
-            color: white; padding: 20px;
-        }
-        .hero h1 { font-family: 'Great Vibes', cursive; font-size: 4rem; margin: 10px 0; color: white; }
-        .hero p { font-family: 'Cinzel', serif; letter-spacing: 4px; font-weight: bold; font-size: 1.2rem; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Жасұлан & Альбина | Wedding Invitation</title><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><style>
+:root{--cream:#FCF9F5;--gold:#B8904D;--pink:#E88B8B;--dark:#1a1a1a}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--dark)}
 
-        .section { padding: 60px 20px; max-width: 600px; margin: auto; }
-        h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.5rem; margin-bottom: 25px; text-transform: uppercase; }
+.hero{
+height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
+background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200') center/cover no-repeat;
+}
+.hero h1{font-family:'Great Vibes';font-size:clamp(3rem,10vw,6rem);color:#fff;margin:0}
+.hero p{color:#fff;letter-spacing:2px;margin-top:10px}
 
-        /* Timer */
-        .timer { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0; }
-        .box { background: var(--white); padding: 15px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .box span { display: block; font-size: 1.8rem; font-weight: bold; color: var(--gold); }
+.section{padding:80px 20px;max-width:600px;margin:auto;text-align:center}
+h2{font-family:'Cinzel';color:var(--gold)}
 
-        /* Card Style */
-        .card { background: var(--white); padding: 30px 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); margin-bottom: 25px; border: 1px solid rgba(184,144,77,0.1); }
-        
-        /* Dress Code Circles */
-        .colors { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
-        .color-circle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #ddd; }
+.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.box{background:#fff;padding:18px;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,.05)}
+.box span{font-size:20px;font-weight:600;color:var(--gold)}
 
-        /* Map */
-        iframe { width: 100%; height: 250px; border-radius: 15px; border: none; margin-top: 15px; }
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.gallery img{width:100%;height:200px;object-fit:cover;border-radius:12px}
 
-        /* Buttons */
-        .btn { 
-            display: block; width: 100%; max-width: 280px; margin: 10px auto; padding: 16px; 
-            border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; cursor: pointer; border: none;
-        }
-        .gold-btn { background: var(--gold); color: #fff; }
-        .wa-btn { background: #25D366; color: #fff; }
+.btn{display:block;margin:12px auto;padding:16px;border-radius:40px;text-decoration:none;color:#fff;font-weight:600;max-width:300px}
+.gold{background:var(--gold)}
+.pink{background:var(--pink)}
 
-        /* Wish Section */
-        textarea, input { width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 10px; border: 1px solid #ddd; font-family: inherit; }
-        .wish-list { text-align: left; margin-top: 20px; max-height: 200px; overflow-y: auto; padding: 10px; background: #f9f9f9; border-radius: 10px; }
-        .wish-item { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        .wish-item b { color: var(--gold); }
+.controls{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:10px;width:90%;max-width:400px}
+.fbtn{flex:1;padding:14px;border-radius:40px;color:#fff;border:none;font-weight:600}
 
-        footer { padding: 40px; opacity: 0.5; font-size: 12px; }
-    </style>
-</head>
-<body>
+iframe{width:100%;height:280px;border:none;border-radius:12px}
 
-    <section class="hero">
-        <p>26 . 08 . 2026</p>
-        <h1>Жасұлан & Альбина</h1>
-        <p id="guest-name">Құрметті қонақ</p>
-    </section>
+footer{padding:80px 20px 120px;text-align:center;opacity:.6}
+</style></head>
+<body><audio id="audio" preload="none" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5f6cdb0b60.mp3">
+</audio><section class="hero">
+<div>
+<h1>Жасұлан & Альбина</h1>
+<p id="guest">Қадірлі қонақ</p>
+</div>
+</section><section class="section">
+<h2>Тойға дейін</h2>
+<div class="timer">
+<div class="box"><span id="d"></span><br>Күн</div>
+<div class="box"><span id="h"></span><br>Сағат</div>
+<div class="box"><span id="m"></span><br>Мин</div>
+<div class="box"><span id="s"></span><br>Сек</div>
+</div>
+</section><section class="section">
+<h2>Мекенжай</h2>
+<iframe src="https://www.google.com/maps?q=Palazzo%20Di%20Astana&output=embed"></iframe>
+<a class="btn gold" href="https://2gis.kz/astana/geo/70000001032123519" target="_blank">Карта ашу</a>
+</section><section class="section">
+<h2>Галерея</h2>
+<div class="gallery">
+<img loading="lazy" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500">
+<img loading="lazy" src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=500">
+</div>
+</section><section class="section">
+<h2>Той Халал өтеді</h2>
+<img width="90" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Halal_logo.svg/600px-Halal_logo.svg.png">
+</section><section class="section">
+<h2>Қатысу</h2>
+<button class="btn gold" onclick="rsvp('Иә, барамын')">Иә, барамын</button>
+<button class="btn pink" onclick="rsvp('Келе алмаймын')">Келе алмаймын</button>
+</section><footer>
+<p>Сүйіспеншілікпен жасалған</p>
+</footer><div class="controls">
+<button class="fbtn gold" id="musicBtn" onclick="toggleMusic()">Музыка</button>
+<button class="fbtn" style="background:#25D366" onclick="wish()">Тілек</button>
+</div><script>
+const name=new URLSearchParams(location.search).get('name')||'Қадірлі қонақ';
+document.getElementById('guest').innerText=name+', сізді күтеміз!';
 
-    <div class="section">
-        <h2>Тойға дейін:</h2>
-        <div class="timer">
-            <div class="box"><span id="days">00</span>күн</div>
-            <div class="box"><span id="hours">00</span>сағат</div>
-            <div class="box"><span id="mins">00</span>мин</div>
-        </div>
+function rsvp(text){
+const msg=encodeURIComponent(`Сәлеметсіз бе! Мен, ${name}. Жауабым: ${text}`);
+window.open(`https://wa.me/77472465381?text=${msg}`,'_blank');
+}
 
-        <div class="card">
-            <h2>Мекенжайымыз</h2>
-            <p><b>Palazzo Di Astana</b><br>Астана қаласы, Сығанақ көшесі, 38</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.66444855239!2d71.4239!3d51.1283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4245840399999999%3A0x7d97669d0f40d6c9!2sPalazzo%20Di%20Astana!5e0!3m2!1skk!2skz!4v1714420000000!5m2!1skk!2skz" loading="lazy"></iframe>
-            <a href="https://2gis.kz/astana/geo/70000001032123519" class="btn gold-btn" target="_blank">2GIS картамен ашу</a>
-        </div>
+function wish(){
+const msg=encodeURIComponent(`${name}: Құтты болсын!`);
+window.open(`https://wa.me/77472465381?text=${msg}`,'_blank');
+}
 
-        <div class="card">
-            <h2>Дресс-код</h2>
-            <p>Біздің тойымыздың ерекше түстері:</p>
-            <div class="colors">
-                <div class="color-circle" style="background: #E88B8B;"></div>
-                <div class="color-circle" style="background: #B8904D;"></div>
-                <div class="color-circle" style="background: #5D4037;"></div>
-                <div class="color-circle" style="background: #D7CCC8;"></div>
-            </div>
-            <p style="font-size: 0.9rem; margin-top: 15px; color: #666;">Тойдың сәнін бізбен бірге осы түстермен толықтыруыңызды сұраймыз</p>
-        </div>
+const audio=document.getElementById('audio');
+let play=false;
+function toggleMusic(){
+if(!play){audio.play();musicBtn.innerText='Өшіру'}
+else{audio.pause();musicBtn.innerText='Музыка'}
+play=!play;
+}
 
-        <div class="card">
-            <h2>Тойға келесіз бе?</h2>
-            <p>Жауабыңызды 10 тамызға дейін беруіңізді сұраймыз:</p>
-            <button onclick="rsvp('Иә, тойға міндетті түрде барамын!')" class="btn gold-btn">Иә, барамын!</button>
-            <button onclick="rsvp('Өкінішке орай, тойға бара алмаймын')" class="btn" style="background:#eee; color:#333;">Келе алмаймын</button>
-        </div>
+const date=new Date("2026-08-26T18:00:00").getTime();
+function update(){
+let dff=date-Date.now();
+if(dff<0){document.querySelectorAll('.box span').forEach(e=>e.innerText='00');return}
 
-        <div class="card">
-            <h2>Жылы тілектеріңіз</h2>
-            <input type="text" id="wish-name" placeholder="Есіміңіз">
-            <textarea id="wish-text" rows="3" placeholder="Тілегіңізді осында жазыңыз..."></textarea>
-            <button onclick="addWish()" class="btn gold-btn" style="width: 100%;">Тілек қалдыру</button>
-            
-            <div class="wish-list" id="wish-list">
-                <div class="wish-item"><b>Арман мен Аружан:</b> Бақытты болыңыздар!</div>
-            </div>
-        </div>
-
-        <a href="https://wa.me/77472465381" class="btn wa-btn">WhatsApp арқылы хабарласу</a>
-    </div>
-
-    <footer>
-        <p>© 2026 Smart Digital KZ</p>
-    </footer>
-
-    <script>
-        // 1. ПЕРСОНАЛИЗАЦИЯ
-        const params = new URLSearchParams(window.location.search);
-        const guest = params.get('name') || "Қадірлі қонақ";
-        document.getElementById('guest-name').innerText = guest + ", тойымыздың куәсі болыңыз!";
-
-        // 2. ТАЙМЕР
-        const weddingDate = new Date("August 26, 2026 18:00:00").getTime();
-        function updateTimer() {
-            const now = new Date().getTime();
-            const diff = weddingDate - now;
-            if (diff < 0) return;
-            document.getElementById('days').innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-            document.getElementById('hours').innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            document.getElementById('mins').innerText = Math.floor((diff / (1000 * 60)) % 60);
-        }
-        setInterval(updateTimer, 1000);
-        updateTimer();
-
-        // 3. RSVP (WhatsApp)
-        function rsvp(answer) {
-            const msg = encodeURIComponent(`Сәлеметсіз бе! Мен, ${guest}. Тойға қатысу туралы жауабым: ${answer}`);
-            window.open(`https://wa.me/77472465381?text=${msg}`, '_blank');
-        }
-
-        // 4. ТІЛЕК ҚАЛДЫРУ (Локальді сақтау)
-        function addWish() {
-            const nameInput = document.getElementById('wish-name');
-            const textInput = document.getElementById('wish-text');
-            const list = document.getElementById('wish-list');
-
-            if (nameInput.value && textInput.value) {
-                const newItem = document.createElement('div');
-                newItem.className = 'wish-item';
-                newItem.innerHTML = `<b>${nameInput.value}:</b> ${textInput.value}`;
-                list.prepend(newItem);
-                
-                // Тазалау
-                nameInput.value = '';
-                textInput.value = '';
-                alert("Рахмет! Тілегіңіз қабылданды.");
-            } else {
-                alert("Есіміңізді және тілегіңізді жазыңыз");
-            }
-        }
-    </script>
-</body>
+d.innerText=Math.floor(dff/(1000*60*60*24));
+h.innerText=Math.floor((dff/(1000*60*60))%24);
+m.innerText=Math.floor((dff/(1000*60))%60);
+s.innerText=Math.floor((dff/1000)%60);
+}
+update();setInterval(update,1000);
+</script></body>
 </html>
