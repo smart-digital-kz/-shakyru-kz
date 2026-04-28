@@ -1,98 +1,110 @@
-<!DOCTYPE html>
-<html lang="kk">
+<!DOCTYPE html><html lang="kk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Жасұлан & Альбина | VIP Шақыру</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <style>
-        :root { --cream: #FCF9F5; --gold: #B8904D; --dark: #2c3e50; --white: #FFFFFF; }
-        body { margin: 0; font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--dark); scroll-behavior: smooth; overflow-x: hidden; }
-        
-        .hero { 
-            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; 
-            background: linear-gradient(rgba(252,249,245,0.7), rgba(252,249,245,0.7)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover; background-position: center;
-        }
-        .hero h1 { font-family: 'Great Vibes'; font-size: clamp(50px, 12vw, 90px); color: var(--gold); margin: 0; }
-        .hero p { font-family: 'Cinzel'; letter-spacing: 4px; font-size: 1.2rem; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Жасұлан & Альбина | Premium Invite</title><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"><style>
+:root{--cream:#FCF9F5;--gold:#B8904D;--pink:#E88B8B}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Montserrat',sans-serif;background:var(--cream);color:#2b2b2b}
 
-        .section { padding: 60px 20px; text-align: center; max-width: 700px; margin: auto; }
-        h2 { font-family: 'Cinzel'; color: var(--gold); font-size: 1.8rem; margin-bottom: 30px; }
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1200') center/cover no-repeat;
+}
 
-        .info-card { background: var(--white); padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid rgba(184,144,77,0.2); }
-        
-        /* Карта терезесі */
-        .map-container { width: 100%; height: 350px; border-radius: 15px; overflow: hidden; margin: 20px 0; border: 1px solid #ddd; }
-        iframe { width: 100%; height: 100%; border: none; }
+.hero h1{
+font-family:'Great Vibes';
+font-size:clamp(3rem,10vw,6rem);
+color:#fff;
+margin:0;
+}
 
-        .btn { 
-            display: inline-block; padding: 15px 30px; border-radius: 50px; text-decoration: none; 
-            color: #fff; font-weight: 600; transition: 0.3s; margin: 10px; background: var(--gold);
-            box-shadow: 0 4px 15px rgba(184,144,77,0.3);
-        }
-        .btn:hover { transform: translateY(-3px); opacity: 0.9; }
+.hero p{
+color:#fff;
+letter-spacing:2px;
+margin-top:15px;
+opactiy:.9
+}
 
-        .timer { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 30px; }
-        .box { background: var(--white); padding: 15px; border-radius: 12px; border: 1px solid rgba(184,144,77,0.1); }
-        .box span { display: block; font-size: 1.5rem; font-weight: bold; color: var(--gold); }
+.section{padding:80px 20px;max-width:600px;margin:auto;text-align:center}
+h2{font-family:'Cinzel';color:var(--gold);margin-bottom:30px}
 
-        @media(max-width: 500px) { .timer { grid-template-columns: repeat(2, 1fr); } }
-    </style>
-</head>
-<body>
+.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.box{background:#fff;padding:18px;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,.05)}
+.box span{font-size:20px;font-weight:600;color:var(--gold)}
 
-    <section class="hero" data-aos="fade-in">
-        <p>ТОЙҒА ШАҚЫРУ</p>
-        <h1>Жасұлан & Альбина</h1>
-        <p>25.05.2026</p>
-    </section>
+.timeline{border-left:2px solid var(--gold);padding-left:15px;text-align:left}
+.timeline div{margin:15px 0}
 
-    <section class="section" data-aos="fade-up">
-        <h2>Той салтанатына дейін:</h2>
-        <div class="timer">
-            <div class="box"><span id="d">00</span>Күн</div>
-            <div class="box"><span id="h">00</span>Сағат</div>
-            <div class="box"><span id="m">00</span>Мин</div>
-            <div class="box"><span id="s">00</span>Сек</div>
-        </div>
-    </section>
+.colors{display:flex;justify-content:center;gap:15px;margin-top:15px}
+.color{width:40px;height:40px;border-radius:50%}
+.gold{background:#B8904D}
+.beige{background:#F5E6D3}
+.black{background:#000}
 
-    <section class="section" data-aos="fade-up">
-        <h2>Мекен-жайымыз</h2>
-        <div class="info-card">
-            <h3>Palazzo Di Astana</h3>
-            <p>Астана қаласы, Тұран даңғылы, 54</p>
-            
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.516246416!2d71.3983!3d51.1086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4245842f9e61db1d%3A0x86846146c641151!2sPalazzo%20Di%20Astana!5e0!3m2!1skk!2skz!4v1714320000000" allowfullscreen="" loading="lazy"></iframe>
-            </div>
+iframe{width:100%;height:280px;border:none;border-radius:12px}
 
-            <a class="btn" href="https://2gis.kz/astana/search/Palazzo%20Di%20Astana" target="_blank">📍 2GIS-ПЕН АШУ</a>
-            <a class="btn" href="https://maps.app.goo.gl/9R6XhJ7f6sE6yR7S9" target="_blank">🗺️ GOOGLE MAPS</a>
-        </div>
-    </section>
+.btn{display:block;margin:12px auto;padding:16px;border-radius:40px;text-decoration:none;color:#fff;font-weight:600;max-width:300px}
+.btn-gold{background:var(--gold)}
+.btn-pink{background:var(--pink)}
 
-    <section class="section" data-aos="fade-up">
-        <h2>Жауабыңызды күтеміз</h2>
-        <a class="btn" href="https://wa.me/77472465381?text=Сәлем! Мен тойға келемін" target="_blank">✅ ИӘ, КЕЛЕМІН</a>
-        <a class="btn" style="background:#E88B8B;" href="https://wa.me/77472465381?text=Кешіріңіз, келе алмаймын" target="_blank">❌ КЕЛЕ АЛМАЙМЫН</a>
-    </section>
+@media(max-width:500px){.timer{grid-template-columns:repeat(2,1fr)}}
+</style></head>
+<body><section class="hero" data-aos="zoom-out">
+<h1>Жасұлан & Альбина</h1>
+<p>Біздің ерекше күнімізге шақырамыз</p>
+</section><section class="section" data-aos="fade-up">
+<h2>Тойға дейін</h2>
+<div class="timer">
+<div class="box"><span id="d"></span><br>Күн</div>
+<div class="box"><span id="h"></span><br>Сағат</div>
+<div class="box"><span id="m"></span><br>Мин</div>
+<div class="box"><span id="s"></span><br>Сек</div>
+</div>
+</section><section class="section" data-aos="fade-up">
+<h2>Dress Code</h2>
+<p>Классикалық стиль ұсынылады</p>
+<div class="colors">
+<div class="color gold"></div>
+<div class="color beige"></div>
+<div class="color black"></div>
+</div>
+</section><section class="section" data-aos="fade-up">
+<h2>Бағдарлама</h2>
+<div class="timeline">
+<div>17:00 — Қонақтарды қарсы алу</div>
+<div>18:00 — Той басталуы</div>
+<div>19:30 — Негізгі бөлім</div>
+<div>22:00 — Қорытынды</div>
+</div>
+</section><section class="section" data-aos="fade-up">
+<h2>Мекенжай</h2>
+<iframe src="https://www.google.com/maps?q=Palazzo%20Di%20Astana&output=embed"></iframe>
+<a class="btn btn-gold" href="https://maps.google.com/?q=Palazzo+Di+Astana" target="_blank">Карта ашу</a>
+</section><section class="section" data-aos="fade-up">
+<h2>Қатысу</h2>
+<a class="btn btn-gold" href="https://wa.me/77472465381?text=Мен тойға келемін" target="_blank">Иә, келемін</a>
+<a class="btn btn-pink" href="https://wa.me/77472465381?text=Келе алмаймын" target="_blank">Келе алмаймын</a>
+</section><script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script><script>
+AOS.init({duration:1000,once:true});
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000 });
+const date=new Date("2026-08-26T18:00:00").getTime();
+function update(){
+let dff=date-Date.now();
+if(dff<0){document.querySelectorAll('.box span').forEach(e=>e.innerText='00');return}
 
-        const weddingDate = new Date("2026-05-25T18:00:00").getTime();
-        setInterval(() => {
-            const now = new Date().getTime();
-            const gap = weddingDate - now;
-            document.getElementById("d").innerText = Math.floor(gap / (1000 * 60 * 60 * 24));
-            document.getElementById("h").innerText = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("m").innerText = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById("s").innerText = Math.floor((gap % (1000 * 60)) / 1000);
-        }, 1000);
-    </script>
-</body>
+d.innerText=Math.floor(dff/(1000*60*60*24));
+h.innerText=Math.floor((dff/(1000*60*60))%24);
+m.innerText=Math.floor((dff/(1000*60))%60);
+s.innerText=Math.floor((dff/1000)%60);
+}
+update();setInterval(update,1000);
+</script></body>
 </html>
