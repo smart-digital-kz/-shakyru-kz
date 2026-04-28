@@ -3,184 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Жасұлан & Альбина | VIP Invitation</title>
+    <title>Жасұлан & Альбина | VIP Шақыру</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <style>
-        :root {
-            --cream: #FCF9F5;
-            --gold: #B8904D;
-            --dark: #2C3E50;
-            --white: #FFFFFF;
+        :root { --cream: #FCF9F5; --gold: #B8904D; --dark: #2c3e50; --white: #FFFFFF; }
+        body { margin: 0; font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--dark); scroll-behavior: smooth; overflow-x: hidden; }
+        
+        .hero { 
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; 
+            background: linear-gradient(rgba(252,249,245,0.7), rgba(252,249,245,0.7)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center;
         }
+        .hero h1 { font-family: 'Great Vibes'; font-size: clamp(50px, 12vw, 90px); color: var(--gold); margin: 0; }
+        .hero p { font-family: 'Cinzel'; letter-spacing: 4px; font-size: 1.2rem; }
 
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--cream);
-            color: var(--dark);
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
+        .section { padding: 60px 20px; text-align: center; max-width: 700px; margin: auto; }
+        h2 { font-family: 'Cinzel'; color: var(--gold); font-size: 1.8rem; margin-bottom: 30px; }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(rgba(252,249,245,0.7), rgba(252,249,245,0.7)), 
-                        url('https://www.transparenttextures.com/patterns/cream-paper.png'),
-                        url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1350&q=80'); /* Luxury Wedding Background */
-            background-size: cover;
-            background-position: center;
-        }
+        .info-card { background: var(--white); padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid rgba(184,144,77,0.2); }
+        
+        /* Карта терезесі */
+        .map-container { width: 100%; height: 350px; border-radius: 15px; overflow: hidden; margin: 20px 0; border: 1px solid #ddd; }
+        iframe { width: 100%; height: 100%; border: none; }
 
-        .hero h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: clamp(50px, 12vw, 90px);
-            color: var(--gold);
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        .btn { 
+            display: inline-block; padding: 15px 30px; border-radius: 50px; text-decoration: none; 
+            color: #fff; font-weight: 600; transition: 0.3s; margin: 10px; background: var(--gold);
+            box-shadow: 0 4px 15px rgba(184,144,77,0.3);
         }
+        .btn:hover { transform: translateY(-3px); opacity: 0.9; }
 
-        .hero p {
-            font-family: 'Cinzel', serif;
-            letter-spacing: 4px;
-            font-size: 1.2rem;
-            margin-top: 20px;
-        }
+        .timer { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 30px; }
+        .box { background: var(--white); padding: 15px; border-radius: 12px; border: 1px solid rgba(184,144,77,0.1); }
+        .box span { display: block; font-size: 1.5rem; font-weight: bold; color: var(--gold); }
 
-        /* Sections */
-        .section {
-            padding: 80px 20px;
-            max-width: 700px;
-            margin: auto;
-            text-align: center;
-        }
-
-        h2 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            font-size: 2rem;
-            margin-bottom: 30px;
-            border-bottom: 1px solid rgba(184,144,77,0.3);
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        /* Timer Box */
-        .timer {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .box {
-            background: var(--white);
-            padding: 20px 10px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(184,144,77,0.1);
-            border: 1px solid rgba(184,144,77,0.2);
-        }
-
-        .box span {
-            display: block;
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--gold);
-        }
-
-        /* Info Card */
-        .info-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 30px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
-            margin-top: 30px;
-            border: 1px solid #eee;
-        }
-
-        /* Dress Code Circles */
-        .colors {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 25px 0;
-        }
-
-        .circle {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 3px solid var(--white);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 18px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.4s;
-            margin: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-gold {
-            background: var(--gold);
-            color: var(--white);
-            box-shadow: 0 10px 20px rgba(184,144,77,0.3);
-        }
-
-        .btn-gold:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 25px rgba(184,144,77,0.4);
-        }
-
-        /* Music Toggle */
-        .music-control {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--gold);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            font-size: 24px;
-            border: none;
-        }
-
-        @media (max-width: 500px) {
-            .timer { grid-template-columns: repeat(2, 1fr); }
-            .hero h1 { font-size: 60px; }
-        }
+        @media(max-width: 500px) { .timer { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
 
-    <section class="hero" data-aos="fade-zoom-in">
-        <p data-aos="fade-up">САЛТАНАТТЫ КЕШКЕ</p>
-        <h1 data-aos="zoom-in">Жасұлан & Альбина</h1>
-        <p data-aos="fade-up">25 . 05 . 2026</p>
+    <section class="hero" data-aos="fade-in">
+        <p>ТОЙҒА ШАҚЫРУ</p>
+        <h1>Жасұлан & Альбина</h1>
+        <p>25.05.2026</p>
     </section>
 
     <section class="section" data-aos="fade-up">
-        <h2>Тойға дейін қалды:</h2>
+        <h2>Той салтанатына дейін:</h2>
         <div class="timer">
             <div class="box"><span id="d">00</span>Күн</div>
             <div class="box"><span id="h">00</span>Сағат</div>
@@ -192,63 +62,37 @@
     <section class="section" data-aos="fade-up">
         <h2>Мекен-жайымыз</h2>
         <div class="info-card">
-            <h3 style="font-family: 'Cinzel'; font-size: 1.5rem;">Palazzo Di Astana</h3>
+            <h3>Palazzo Di Astana</h3>
             <p>Астана қаласы, Тұран даңғылы, 54</p>
-            <div style="margin: 20px 0; font-size: 1.2rem; font-weight: 600; color: var(--gold);">Сағат 18:00-де</div>
-            <a href="https://go.2gis.com/qay26" class="btn btn-gold" target="_blank">📍 2GIS КАРТАМЕН АШУ</a>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.516246416!2d71.3983!3d51.1086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4245842f9e61db1d%3A0x86846146c641151!2sPalazzo%20Di%20Astana!5e0!3m2!1skk!2skz!4v1714320000000" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <a class="btn" href="https://2gis.kz/astana/search/Palazzo%20Di%20Astana" target="_blank">📍 2GIS-ПЕН АШУ</a>
+            <a class="btn" href="https://maps.app.goo.gl/9R6XhJ7f6sE6yR7S9" target="_blank">🗺️ GOOGLE MAPS</a>
         </div>
     </section>
 
     <section class="section" data-aos="fade-up">
-        <h2>Dress Code</h2>
-        <p>Кешіміздің сәнін келтіру үшін келесі түстердегі киім үлгісін таңдауыңызды өтінеміз:</p>
-        <div class="colors">
-            <div class="circle" style="background: #D4AF37;"></div> <div class="circle" style="background: #E5E4E2;"></div> <div class="circle" style="background: #2C3E50;"></div> <div class="circle" style="background: #FFFFFF;"></div> </div>
-        <p style="font-size: 0.9rem; opacity: 0.7;">(Міндетті емес, ниет білдірушілерге)</p>
+        <h2>Жауабыңызды күтеміз</h2>
+        <a class="btn" href="https://wa.me/77472465381?text=Сәлем! Мен тойға келемін" target="_blank">✅ ИӘ, КЕЛЕМІН</a>
+        <a class="btn" style="background:#E88B8B;" href="https://wa.me/77472465381?text=Кешіріңіз, келе алмаймын" target="_blank">❌ КЕЛЕ АЛМАЙМЫН</a>
     </section>
-
-    <section class="section" data-aos="zoom-in">
-        <h2>Тойға келетініңізді растаңыз</h2>
-        <p>Құрметті қонақ, сізді асыға күтеміз!</p>
-        <a href="https://wa.me/77472465381?text=Сәлем! Мен тойға барамын!" class="btn btn-gold">✅ ИӘ, КЕЛЕМІН</a>
-        <br>
-        <a href="https://wa.me/77472465381?text=Кешіріңіз, бара алмаймын." style="color: #E88B8B; text-decoration: none; font-weight: 600; margin-top: 15px; display: inline-block;">Келе алмаймын</a>
-    </section>
-
-    <div style="text-align: center; padding: 40px; opacity: 0.3;">
-        <img src="https://img.icons8.com/ios/100/b8904d/ornament.png" width="50">
-    </div>
-
-    <button class="music-control" onclick="toggleMusic()" id="musicBtn">🎵</button>
-
-    <audio id="bgMusic" loop>
-        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5f6cdb0b60.mp3" type="audio/mpeg">
-    </audio>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init({ duration: 1000 });
 
-        // Timer Logic
-        const targetDate = new Date("May 25, 2026 18:00:00").getTime();
+        const weddingDate = new Date("2026-05-25T18:00:00").getTime();
         setInterval(() => {
             const now = new Date().getTime();
-            const diff = targetDate - now;
-            document.getElementById('d').innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-            document.getElementById('h').innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById('m').innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById('s').innerText = Math.floor((diff % (1000 * 60)) / 1000);
+            const gap = weddingDate - now;
+            document.getElementById("d").innerText = Math.floor(gap / (1000 * 60 * 60 * 24));
+            document.getElementById("h").innerText = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("m").innerText = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("s").innerText = Math.floor((gap % (1000 * 60)) / 1000);
         }, 1000);
-
-        // Music Logic
-        let isPlaying = false;
-        const music = document.getElementById('bgMusic');
-        const btn = document.getElementById('musicBtn');
-        function toggleMusic() {
-            if(!isPlaying) { music.play(); btn.innerText = "⏸"; } 
-            else { music.pause(); btn.innerText = "🎵"; }
-            isPlaying = !isPlaying;
-        }
     </script>
 </body>
 </html>
