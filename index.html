@@ -3,120 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Жасұлан & Альбина</title>
+    <title>Жасұлан & Альбина | Wedding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            font-family: sans-serif;
-            background-color: #FCF9F5;
-            color: #333;
-            text-align: center;
-        }
-        .container { padding: 50px 20px; max-width: 500px; margin: auto; }
-        h1 { color: #B8904D; font-size: 2.5rem; margin-bottom: 10px; }
-        .date { letter-spacing: 3px; font-weight: bold; color: #888; }
+        :root { --gold: #B8904D; --cream: #FCF9F5; --dark: #2C2C2C; --white: #FFFFFF; }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        body { margin: 0; font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--dark); text-align: center; }
         
-        .timer {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
+        /* Hero Section */
+        .hero { 
+            height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1000') center/cover;
+            color: white; padding: 20px;
         }
-        .box {
-            background: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            min-width: 60px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .box span { display: block; font-size: 20px; font-weight: bold; color: #B8904D; }
+        .hero h1 { font-family: 'Great Vibes', cursive; font-size: 4rem; margin: 10px 0; color: white; }
+        .hero p { font-family: 'Cinzel', serif; letter-spacing: 4px; font-weight: bold; font-size: 1.2rem; }
 
-        .btn {
-            display: block;
-            background: #B8904D;
-            color: white;
-            padding: 15px;
-            margin: 10px auto;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            max-width: 250px;
-        }
-        .btn-wa { background: #25D366; }
+        .section { padding: 60px 20px; max-width: 600px; margin: auto; }
+        h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.5rem; margin-bottom: 25px; text-transform: uppercase; }
+
+        /* Timer */
+        .timer { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0; }
+        .box { background: var(--white); padding: 15px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .box span { display: block; font-size: 1.8rem; font-weight: bold; color: var(--gold); }
+
+        /* Card Style */
+        .card { background: var(--white); padding: 30px 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); margin-bottom: 25px; border: 1px solid rgba(184,144,77,0.1); }
         
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        /* Dress Code Circles */
+        .colors { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
+        .color-circle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #ddd; }
+
+        /* Map */
+        iframe { width: 100%; height: 250px; border-radius: 15px; border: none; margin-top: 15px; }
+
+        /* Buttons */
+        .btn { 
+            display: block; width: 100%; max-width: 280px; margin: 10px auto; padding: 16px; 
+            border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; cursor: pointer; border: none;
         }
-        .map-placeholder {
-            background: #eee;
-            height: 200px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 15px 0;
-        }
+        .gold-btn { background: var(--gold); color: #fff; }
+        .wa-btn { background: #25D366; color: #fff; }
+
+        /* Wish Section */
+        textarea, input { width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 10px; border: 1px solid #ddd; font-family: inherit; }
+        .wish-list { text-align: left; margin-top: 20px; max-height: 200px; overflow-y: auto; padding: 10px; background: #f9f9f9; border-radius: 10px; }
+        .wish-item { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .wish-item b { color: var(--gold); }
+
+        footer { padding: 40px; opacity: 0.5; font-size: 12px; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <p class="date">26 . 08 . 2026</p>
-    <h1>Жасұлан & Альбина</h1>
-    <p>Тойымыздың қадірлі қонағы болыңыз!</p>
+    <section class="hero">
+        <p>26 . 08 . 2026</p>
+        <h1>Жасұлан & Альбина</h1>
+        <p id="guest-name">Құрметті қонақ</p>
+    </section>
 
-    <div class="timer">
-        <div class="box"><span id="d">00</span>күн</div>
-        <div class="box"><span id="h">00</span>сағат</div>
-        <div class="box"><span id="m">00</span>мин</div>
+    <div class="section">
+        <h2>Тойға дейін:</h2>
+        <div class="timer">
+            <div class="box"><span id="days">00</span>күн</div>
+            <div class="box"><span id="hours">00</span>сағат</div>
+            <div class="box"><span id="mins">00</span>мин</div>
+        </div>
+
+        <div class="card">
+            <h2>Мекенжайымыз</h2>
+            <p><b>Palazzo Di Astana</b><br>Астана қаласы, Сығанақ көшесі, 38</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.66444855239!2d71.4239!3d51.1283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4245840399999999%3A0x7d97669d0f40d6c9!2sPalazzo%20Di%20Astana!5e0!3m2!1skk!2skz!4v1714420000000!5m2!1skk!2skz" loading="lazy"></iframe>
+            <a href="https://2gis.kz/astana/geo/70000001032123519" class="btn gold-btn" target="_blank">2GIS картамен ашу</a>
+        </div>
+
+        <div class="card">
+            <h2>Дресс-код</h2>
+            <p>Біздің тойымыздың ерекше түстері:</p>
+            <div class="colors">
+                <div class="color-circle" style="background: #E88B8B;"></div>
+                <div class="color-circle" style="background: #B8904D;"></div>
+                <div class="color-circle" style="background: #5D4037;"></div>
+                <div class="color-circle" style="background: #D7CCC8;"></div>
+            </div>
+            <p style="font-size: 0.9rem; margin-top: 15px; color: #666;">Тойдың сәнін бізбен бірге осы түстермен толықтыруыңызды сұраймыз</p>
+        </div>
+
+        <div class="card">
+            <h2>Тойға келесіз бе?</h2>
+            <p>Жауабыңызды 10 тамызға дейін беруіңізді сұраймыз:</p>
+            <button onclick="rsvp('Иә, тойға міндетті түрде барамын!')" class="btn gold-btn">Иә, барамын!</button>
+            <button onclick="rsvp('Өкінішке орай, тойға бара алмаймын')" class="btn" style="background:#eee; color:#333;">Келе алмаймын</button>
+        </div>
+
+        <div class="card">
+            <h2>Жылы тілектеріңіз</h2>
+            <input type="text" id="wish-name" placeholder="Есіміңіз">
+            <textarea id="wish-text" rows="3" placeholder="Тілегіңізді осында жазыңыз..."></textarea>
+            <button onclick="addWish()" class="btn gold-btn" style="width: 100%;">Тілек қалдыру</button>
+            
+            <div class="wish-list" id="wish-list">
+                <div class="wish-item"><b>Арман мен Аружан:</b> Бақытты болыңыздар!</div>
+            </div>
+        </div>
+
+        <a href="https://wa.me/77472465381" class="btn wa-btn">WhatsApp арқылы хабарласу</a>
     </div>
 
-    <div class="card">
-        <h3>Мекенжайымыз</h3>
-        <p>Palazzo Di Astana<br>Сығанақ көшесі, 38</p>
-        <a href="https://2gis.kz/astana/geo/70000001032123519" class="btn">2GIS картамен ашу</a>
-    </div>
+    <footer>
+        <p>© 2026 Smart Digital KZ</p>
+    </footer>
 
-    <div class="card" style="border: 1px solid #2E7D32;">
-        <h3 style="color: #2E7D32;">Той Халал өтеді</h3>
-        <p>Дастарханға алкоголь қойылмайды</p>
-    </div>
+    <script>
+        // 1. ПЕРСОНАЛИЗАЦИЯ
+        const params = new URLSearchParams(window.location.search);
+        const guest = params.get('name') || "Қадірлі қонақ";
+        document.getElementById('guest-name').innerText = guest + ", тойымыздың куәсі болыңыз!";
 
-    <div class="card">
-        <h3>Жауап беру</h3>
-        <button onclick="sendRSVP('Иә, барамын')" class="btn" style="border:none; width:100%;">Иә, барамын</button>
-        <button onclick="sendRSVP('Келе алмаймын')" class="btn" style="background:#E88B8B; border:none; width:100%;">Келе алмаймын</button>
-    </div>
+        // 2. ТАЙМЕР
+        const weddingDate = new Date("August 26, 2026 18:00:00").getTime();
+        function updateTimer() {
+            const now = new Date().getTime();
+            const diff = weddingDate - now;
+            if (diff < 0) return;
+            document.getElementById('days').innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById('hours').innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            document.getElementById('mins').innerText = Math.floor((diff / (1000 * 60)) % 60);
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
 
-    <br>
-    <a href="https://wa.me/77472465381" class="btn btn-wa">WhatsApp-қа тілек жазу</a>
-</div>
+        // 3. RSVP (WhatsApp)
+        function rsvp(answer) {
+            const msg = encodeURIComponent(`Сәлеметсіз бе! Мен, ${guest}. Тойға қатысу туралы жауабым: ${answer}`);
+            window.open(`https://wa.me/77472465381?text=${msg}`, '_blank');
+        }
 
-<script>
-    // Timer
-    const weddingDate = new Date("2026-08-26T18:00:00").getTime();
-    function updateTimer() {
-        const now = new Date().getTime();
-        const diff = weddingDate - now;
-        if (diff < 0) return;
-        document.getElementById('d').innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-        document.getElementById('h').innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        document.getElementById('m').innerText = Math.floor((diff / (1000 * 60)) % 60);
-    }
-    setInterval(updateTimer, 1000);
-    updateTimer();
+        // 4. ТІЛЕК ҚАЛДЫРУ (Локальді сақтау)
+        function addWish() {
+            const nameInput = document.getElementById('wish-name');
+            const textInput = document.getElementById('wish-text');
+            const list = document.getElementById('wish-list');
 
-    // RSVP
-    function sendRSVP(answer) {
-        const name = new URLSearchParams(window.location.search).get('name') || 'Қонақ';
-        const msg = encodeURIComponent(`Сәлеметсіз бе! Мен, ${name}. Жауабым: ${answer}`);
-        window.location.href = `https://wa.me/77472465381?text=${msg}`;
-    }
-</script>
-
+            if (nameInput.value && textInput.value) {
+                const newItem = document.createElement('div');
+                newItem.className = 'wish-item';
+                newItem.innerHTML = `<b>${nameInput.value}:</b> ${textInput.value}`;
+                list.prepend(newItem);
+                
+                // Тазалау
+                nameInput.value = '';
+                textInput.value = '';
+                alert("Рахмет! Тілегіңіз қабылданды.");
+            } else {
+                alert("Есіміңізді және тілегіңізді жазыңыз");
+            }
+        }
+    </script>
 </body>
 </html>
