@@ -3,149 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Digital Invitation | Palazzo Di Astana</title>
+    <title>Жасұлан & Альбина | Шақыру</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     
     <style>
         :root {
-            --gold: #C5A059;
-            --soft-white: #F9F7F2;
-            --dark-grey: #1a1a1a;
+            --pink-bg: #E88B8B;
+            --gold-text: #B8904D;
+            --soft-cream: #FCF9F5;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
+            margin: 0; padding: 0;
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--soft-white);
-            color: var(--dark-grey);
-            overflow-x: hidden;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://lh5.googleusercontent.com/p/AF1QipNq4I3H-j9tU0hS0_I_6v5_uX-6L5iN8_5u7v4=w1080-h1920-p-k-no') center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
+            background-color: var(--soft-cream);
+            color: #444;
             text-align: center;
         }
 
-        .hero h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: clamp(3rem, 10vw, 5rem);
-            margin-bottom: 10px;
-            color: var(--gold);
-        }
-
-        .hero p {
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-
-        /* SECTIONS */
-        section { padding: 80px 20px; text-align: center; }
-
-        .section-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            color: var(--gold);
-        }
-
-        /* PROGRAM */
-        .program { background-color: #fff; }
-        .event-item {
+        /* Төменгі қатып тұратын батырмалар (Floating Buttons) */
+        .fixed-controls {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
-            justify-content: space-between;
-            max-width: 450px;
-            margin: 15px auto;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
+            gap: 10px;
+            z-index: 1000;
+            width: 90%;
+            justify-content: center;
         }
 
-        /* LOCATION CARD */
-        .location { background-color: var(--soft-white); }
-        .rest-name { font-weight: 600; font-size: 1.4rem; margin-bottom: 10px; }
-        
-        /* BUTTONS */
-        .btn {
-            display: inline-block;
-            margin: 10px;
-            padding: 15px 30px;
+        .control-btn {
+            background-color: var(--pink-bg);
+            color: white;
+            border: none;
+            padding: 15px 20px;
             border-radius: 50px;
-            text-decoration: none;
             font-weight: 600;
-            transition: 0.3s;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(232, 139, 139, 0.4);
+            cursor: pointer;
+            flex: 1;
+            justify-content: center;
+            white-space: nowrap;
         }
-        .btn-gold { background: var(--gold); color: white; }
-        .btn-wa { background: #25D366; color: white; }
 
-        .colors { display: flex; justify-content: center; gap: 15px; margin: 20px 0; }
-        .color-dot { width: 45px; height: 45px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        /* Басты сурет блогы */
+        .header-section {
+            padding: 40px 20px;
+            background: white;
+        }
 
-        footer { padding: 30px; font-size: 0.8rem; opacity: 0.6; background: #fff; }
+        .date-badge {
+            background: #333;
+            color: var(--gold-text);
+            padding: 10px 30px;
+            display: inline-block;
+            font-family: 'Great Vibes', cursive;
+            font-size: 24px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 45px;
+            color: var(--gold-text);
+            margin: 10px 0;
+        }
+
+        .main-photo {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            margin: 20px 0;
+        }
+
+        /* Ақ папка стиліндегі блоктар */
+        .info-card {
+            background: white;
+            margin: 20px;
+            padding: 30px 20px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .label { color: var(--gold-text); font-size: 14px; text-transform: uppercase; letter-spacing: 2px; }
+        .value { font-size: 20px; font-weight: 600; margin: 10px 0; }
+
+        /* RSVP (Жауап беру) бөлімі */
+        .rsvp-option {
+            background: #FFF5F5;
+            border: 1px solid #FFE0E0;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .radio-custom { width: 20px; height: 20px; border: 2px solid var(--pink-bg); border-radius: 50%; }
+
+        .btn-main {
+            background-color: var(--pink-bg);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 18px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        .halal-badge { width: 80px; margin-top: 10px; }
+
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <p data-aos="fade-down">Тойымыздың қадірлі қонағы болыңыз</p>
-        <h1 data-aos="zoom-in">Arman & Ayaru</h1>
-        <p data-aos="fade-up">15.08.2026</p>
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="header-section">
+        <div class="date-badge">15 Тамыз 2026</div>
+        <div class="names">Жасұлан & Альбина</div>
+        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1974" alt="Couple" class="main-photo" data-aos="zoom-in">
     </div>
 
-    <section class="love-story" data-aos="fade-up">
-        <h2 class="section-title">Құрметті қонақтар!</h2>
-        <p>Сіздерді ұлымыз бен келініміздің шаңырақ көтеру салтанатына арналған ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
-    </section>
+    <div class="info-card" data-aos="fade-up">
+        <p class="label">Той иелері:</p>
+        <p class="value">Руслан - Ләйлә</p>
+    </div>
 
-    <section class="program">
-        <h2 class="section-title" data-aos="fade-up">Той бағдарламасы</h2>
-        <div class="event-item" data-aos="fade-right"><span>18:00</span><span>Қонақтардың жиналуы</span></div>
-        <div class="event-item" data-aos="fade-left"><span>19:00</span><span>Тойдың басталуы</span></div>
-        <div class="event-item" data-aos="fade-right"><span>21:00</span><span>Беташар рәсімі</span></div>
-    </section>
+    <div class="info-card" data-aos="fade-up">
+        <p class="label">Тойдың басталу уақыты:</p>
+        <p class="value">15.08.2026 / сағат 18:00</p>
+    </div>
 
-    <section class="location" data-aos="zoom-in">
-        <h2 class="section-title">Мекен-жайымыз</h2>
-        <p class="rest-name">Palazzo Di Astana</p>
-        <p>Астана қаласы, Сығанақ көшесі, 38</p>
-        <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">"Жасыл квартал" ТҮК ауданы</p>
-        
-        <div style="margin-top: 30px;">
-            <a href="https://2gis.kz/astana/geo/70000001032123519" class="btn btn-gold" target="_blank">2GIS картамен ашу</a>
-            <br>
-            <a href="https://wa.me/77472465381?text=Сәлеметсіз бе! Тойға міндетті түрде барамыз!" class="btn btn-wa">WhatsApp-қа жауап беру</a>
+    <div class="info-card" data-aos="fade-up">
+        <p class="label">Той мекенжайы:</p>
+        <p class="value">Астана қ., Сығанақ көшесі, 38<br>"Palazzo Di Astana" мейрамханасы</p>
+        <button class="btn-main" onclick="window.location.href='https://2gis.kz/astana/geo/70000001032123519'">КАРТА АРҚЫЛЫ АШУ ↗</button>
+    </div>
+
+    <div class="info-card" data-aos="fade-up">
+        <p class="label">Дресс код:</p>
+        <p style="margin-top:10px;">Ер азаматтар: классика, қара рубашка<br>Қыз келіншектер: жасыл түс</p>
+    </div>
+
+    <div class="info-card" style="background: #F9FFF9;" data-aos="fade-up">
+        <h3>Той Халал өтеді</h3>
+        <p style="font-size: 13px;">Дастарханға ешқандай алкоголь қойылмайды.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Halal_logo.svg/1200px-Halal_logo.svg.png" class="halal-badge" alt="Halal">
+    </div>
+
+    <div class="info-card" data-aos="fade-up">
+        <p class="label">Тойға келетініңізді растаңыз:</p>
+        <div class="rsvp-option">
+            <div class="radio-custom"></div>
+            <span>Иә, жалғыз өзім барамын!</span>
         </div>
-    </section>
-
-    <section class="dress-code">
-        <h2 class="section-title" data-aos="fade-up">Дресс-код</h2>
-        <p>Тойымыздың түстік гаммасы:</p>
-        <div class="colors" data-aos="zoom-in">
-            <div class="color-dot" style="background-color: #D4AF37;"></div>
-            <div class="color-dot" style="background-color: #333333;"></div>
-            <div class="color-dot" style="background-color: #E5E4E2;"></div>
-            <div class="color-dot" style="background-color: #F5F5DC;"></div>
+        <div class="rsvp-option">
+            <div class="radio-custom"></div>
+            <span>Жұбайыммен бірге барамын</span>
         </div>
-    </section>
+        <button class="btn-main" onclick="alert('Жауабыңыз қабылданды!')">ЖАУАП БЕРУ</button>
+    </div>
 
-    <footer>
-        <p>© 2026 Барлық құқықтар қорғалған <br> <strong>smart-digital-kz</strong> агенттігі</p>
-    </footer>
+    <br><br><br><br><br> <div class="fixed-controls">
+        <button class="control-btn" id="musicBtn">
+            <i class="fas fa-play"></i> Әуен қосу
+        </button>
+        <button class="control-btn" onclick="window.location.href='https://wa.me/77472465381'">
+            <i class="fas fa-comment"></i> ТІЛЕК ҚАЛДЫРУ
+        </button>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+        AOS.init({ duration: 1000 });
+
+        // Музыканы басқару
+        const music = document.getElementById('bgMusic');
+        const btn = document.getElementById('musicBtn');
+        let isPlaying = false;
+
+        btn.addEventListener('click', () => {
+            if (!isPlaying) {
+                music.play();
+                btn.innerHTML = '<i class="fas fa-pause"></i> Әуенді тоқтату';
+            } else {
+                music.pause();
+                btn.innerHTML = '<i class="fas fa-play"></i> Әуен қосу';
+            }
+            isPlaying = !isPlaying;
+        });
     </script>
 </body>
 </html>
-
