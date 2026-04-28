@@ -1,112 +1,254 @@
-<!DOCTYPE html><html lang="kk">
+<!DOCTYPE html>
+<html lang="kk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Жасұлан & Альбина | Wedding Invitation</title><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><style>
-:root{--cream:#FCF9F5;--gold:#B8904D;--pink:#E88B8B;--dark:#1a1a1a}
-*{box-sizing:border-box}
-body{margin:0;font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--dark)}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жасұлан & Альбина | VIP Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FCF9F5;
+            --gold: #B8904D;
+            --dark: #2C3E50;
+            --white: #FFFFFF;
+        }
 
-.hero{
-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
-background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200') center/cover no-repeat;
-}
-.hero h1{font-family:'Great Vibes';font-size:clamp(3rem,10vw,6rem);color:#fff;margin:0}
-.hero p{color:#fff;letter-spacing:2px;margin-top:10px}
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cream);
+            color: var(--dark);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
-.section{padding:80px 20px;max-width:600px;margin:auto;text-align:center}
-h2{font-family:'Cinzel';color:var(--gold)}
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(252,249,245,0.7), rgba(252,249,245,0.7)), 
+                        url('https://www.transparenttextures.com/patterns/cream-paper.png'),
+                        url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1350&q=80'); /* Luxury Wedding Background */
+            background-size: cover;
+            background-position: center;
+        }
 
-.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.box{background:#fff;padding:18px;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,.05)}
-.box span{font-size:20px;font-weight:600;color:var(--gold)}
+        .hero h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(50px, 12vw, 90px);
+            color: var(--gold);
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
 
-.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.gallery img{width:100%;height:200px;object-fit:cover;border-radius:12px}
+        .hero p {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 4px;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
 
-.btn{display:block;margin:12px auto;padding:16px;border-radius:40px;text-decoration:none;color:#fff;font-weight:600;max-width:300px}
-.gold{background:var(--gold)}
-.pink{background:var(--pink)}
+        /* Sections */
+        .section {
+            padding: 80px 20px;
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
 
-.controls{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:10px;width:90%;max-width:400px}
-.fbtn{flex:1;padding:14px;border-radius:40px;color:#fff;border:none;font-weight:600}
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(184,144,77,0.3);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
 
-iframe{width:100%;height:280px;border:none;border-radius:12px}
+        /* Timer Box */
+        .timer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
 
-footer{padding:80px 20px 120px;text-align:center;opacity:.6}
-</style></head>
-<body><audio id="audio" preload="none" loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5f6cdb0b60.mp3">
-</audio><section class="hero">
-<div>
-<h1>Жасұлан & Альбина</h1>
-<p id="guest">Қадірлі қонақ</p>
-</div>
-</section><section class="section">
-<h2>Тойға дейін</h2>
-<div class="timer">
-<div class="box"><span id="d"></span><br>Күн</div>
-<div class="box"><span id="h"></span><br>Сағат</div>
-<div class="box"><span id="m"></span><br>Мин</div>
-<div class="box"><span id="s"></span><br>Сек</div>
-</div>
-</section><section class="section">
-<h2>Мекенжай</h2>
-<iframe src="https://www.google.com/maps?q=Palazzo%20Di%20Astana&output=embed"></iframe>
-<a class="btn gold" href="https://2gis.kz/astana/geo/70000001032123519" target="_blank">Карта ашу</a>
-</section><section class="section">
-<h2>Галерея</h2>
-<div class="gallery">
-<img loading="lazy" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500">
-<img loading="lazy" src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=500">
-</div>
-</section><section class="section">
-<h2>Той Халал өтеді</h2>
-<img width="90" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Halal_logo.svg/600px-Halal_logo.svg.png">
-</section><section class="section">
-<h2>Қатысу</h2>
-<button class="btn gold" onclick="rsvp('Иә, барамын')">Иә, барамын</button>
-<button class="btn pink" onclick="rsvp('Келе алмаймын')">Келе алмаймын</button>
-</section><footer>
-<p>Сүйіспеншілікпен жасалған</p>
-</footer><div class="controls">
-<button class="fbtn gold" id="musicBtn" onclick="toggleMusic()">Музыка</button>
-<button class="fbtn" style="background:#25D366" onclick="wish()">Тілек</button>
-</div><script>
-const name=new URLSearchParams(location.search).get('name')||'Қадірлі қонақ';
-document.getElementById('guest').innerText=name+', сізді күтеміз!';
+        .box {
+            background: var(--white);
+            padding: 20px 10px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(184,144,77,0.1);
+            border: 1px solid rgba(184,144,77,0.2);
+        }
 
-function rsvp(text){
-const msg=encodeURIComponent(`Сәлеметсіз бе! Мен, ${name}. Жауабым: ${text}`);
-window.open(`https://wa.me/77472465381?text=${msg}`,'_blank');
-}
+        .box span {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--gold);
+        }
 
-function wish(){
-const msg=encodeURIComponent(`${name}: Құтты болсын!`);
-window.open(`https://wa.me/77472465381?text=${msg}`,'_blank');
-}
+        /* Info Card */
+        .info-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            margin-top: 30px;
+            border: 1px solid #eee;
+        }
 
-const audio=document.getElementById('audio');
-let play=false;
-function toggleMusic(){
-if(!play){audio.play();musicBtn.innerText='Өшіру'}
-else{audio.pause();musicBtn.innerText='Музыка'}
-play=!play;
-}
+        /* Dress Code Circles */
+        .colors {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
 
-const date=new Date("2026-08-26T18:00:00").getTime();
-function update(){
-let dff=date-Date.now();
-if(dff<0){document.querySelectorAll('.box span').forEach(e=>e.innerText='00');return}
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
 
-d.innerText=Math.floor(dff/(1000*60*60*24));
-h.innerText=Math.floor((dff/(1000*60*60))%24);
-m.innerText=Math.floor((dff/(1000*60))%60);
-s.innerText=Math.floor((dff/1000)%60);
-}
-update();setInterval(update,1000);
-</script></body>
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.4s;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--white);
+            box-shadow: 0 10px 20px rgba(184,144,77,0.3);
+        }
+
+        .btn-gold:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(184,144,77,0.4);
+        }
+
+        /* Music Toggle */
+        .music-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gold);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            font-size: 24px;
+            border: none;
+        }
+
+        @media (max-width: 500px) {
+            .timer { grid-template-columns: repeat(2, 1fr); }
+            .hero h1 { font-size: 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero" data-aos="fade-zoom-in">
+        <p data-aos="fade-up">САЛТАНАТТЫ КЕШКЕ</p>
+        <h1 data-aos="zoom-in">Жасұлан & Альбина</h1>
+        <p data-aos="fade-up">25 . 05 . 2026</p>
+    </section>
+
+    <section class="section" data-aos="fade-up">
+        <h2>Тойға дейін қалды:</h2>
+        <div class="timer">
+            <div class="box"><span id="d">00</span>Күн</div>
+            <div class="box"><span id="h">00</span>Сағат</div>
+            <div class="box"><span id="m">00</span>Мин</div>
+            <div class="box"><span id="s">00</span>Сек</div>
+        </div>
+    </section>
+
+    <section class="section" data-aos="fade-up">
+        <h2>Мекен-жайымыз</h2>
+        <div class="info-card">
+            <h3 style="font-family: 'Cinzel'; font-size: 1.5rem;">Palazzo Di Astana</h3>
+            <p>Астана қаласы, Тұран даңғылы, 54</p>
+            <div style="margin: 20px 0; font-size: 1.2rem; font-weight: 600; color: var(--gold);">Сағат 18:00-де</div>
+            <a href="https://go.2gis.com/qay26" class="btn btn-gold" target="_blank">📍 2GIS КАРТАМЕН АШУ</a>
+        </div>
+    </section>
+
+    <section class="section" data-aos="fade-up">
+        <h2>Dress Code</h2>
+        <p>Кешіміздің сәнін келтіру үшін келесі түстердегі киім үлгісін таңдауыңызды өтінеміз:</p>
+        <div class="colors">
+            <div class="circle" style="background: #D4AF37;"></div> <div class="circle" style="background: #E5E4E2;"></div> <div class="circle" style="background: #2C3E50;"></div> <div class="circle" style="background: #FFFFFF;"></div> </div>
+        <p style="font-size: 0.9rem; opacity: 0.7;">(Міндетті емес, ниет білдірушілерге)</p>
+    </section>
+
+    <section class="section" data-aos="zoom-in">
+        <h2>Тойға келетініңізді растаңыз</h2>
+        <p>Құрметті қонақ, сізді асыға күтеміз!</p>
+        <a href="https://wa.me/77472465381?text=Сәлем! Мен тойға барамын!" class="btn btn-gold">✅ ИӘ, КЕЛЕМІН</a>
+        <br>
+        <a href="https://wa.me/77472465381?text=Кешіріңіз, бара алмаймын." style="color: #E88B8B; text-decoration: none; font-weight: 600; margin-top: 15px; display: inline-block;">Келе алмаймын</a>
+    </section>
+
+    <div style="text-align: center; padding: 40px; opacity: 0.3;">
+        <img src="https://img.icons8.com/ios/100/b8904d/ornament.png" width="50">
+    </div>
+
+    <button class="music-control" onclick="toggleMusic()" id="musicBtn">🎵</button>
+
+    <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5f6cdb0b60.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000 });
+
+        // Timer Logic
+        const targetDate = new Date("May 25, 2026 18:00:00").getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+            document.getElementById('d').innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById('h').innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById('m').innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById('s').innerText = Math.floor((diff % (1000 * 60)) / 1000);
+        }, 1000);
+
+        // Music Logic
+        let isPlaying = false;
+        const music = document.getElementById('bgMusic');
+        const btn = document.getElementById('musicBtn');
+        function toggleMusic() {
+            if(!isPlaying) { music.play(); btn.innerText = "⏸"; } 
+            else { music.pause(); btn.innerText = "🎵"; }
+            isPlaying = !isPlaying;
+        }
+    </script>
+</body>
 </html>
