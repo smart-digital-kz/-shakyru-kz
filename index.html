@@ -1,342 +1,112 @@
-<!DOCTYPE html>
-<html lang="kk">
+<!DOCTYPE html><html lang="kk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Жасұлан & Альбина | Wedding Invitation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Жасұлан & Альбина | Wedding Invitation</title><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><style>
+:root{--cream:#FCF9F5;--gold:#B8904D;--pink:#E88B8B;--dark:#1a1a1a}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--dark)}
 
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+.hero{
+height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
+background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200') center/cover no-repeat;
+}
+.hero h1{font-family:'Great Vibes';font-size:clamp(3rem,10vw,6rem);color:#fff;margin:0}
+.hero p{color:#fff;letter-spacing:2px;margin-top:10px}
 
-    <style>
-        :root {
-            --bg-color: #FCF9F5;
-            --gold: #B8904D;
-            --rose: #E88B8B;
-            --text-dark: #2C2C2C;
-            --white: #FFFFFF;
-        }
+.section{padding:80px 20px;max-width:600px;margin:auto;text-align:center}
+h2{font-family:'Cinzel';color:var(--gold)}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.box{background:#fff;padding:18px;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,.05)}
+.box span{font-size:20px;font-weight:600;color:var(--gold)}
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-dark);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.gallery img{width:100%;height:200px;object-fit:cover;border-radius:12px}
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(rgba(252, 249, 245, 0.7), rgba(252, 249, 245, 0.7)), 
-                        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070') center/cover;
-            padding: 20px;
-        }
+.btn{display:block;margin:12px auto;padding:16px;border-radius:40px;text-decoration:none;color:#fff;font-weight:600;max-width:300px}
+.gold{background:var(--gold)}
+.pink{background:var(--pink)}
 
-        .hero-date {
-            font-family: 'Cinzel', serif;
-            letter-spacing: 4px;
-            color: var(--gold);
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
+.controls{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:10px;width:90%;max-width:400px}
+.fbtn{flex:1;padding:14px;border-radius:40px;color:#fff;border:none;font-weight:600}
 
-        .hero-names {
-            font-family: 'Great Vibes', cursive;
-            font-size: clamp(3.5rem, 15vw, 6rem);
-            color: var(--text-dark);
-            line-height: 1.1;
-            margin-bottom: 10px;
-        }
+iframe{width:100%;height:280px;border:none;border-radius:12px}
 
-        /* Countdown Timer */
-        .timer-section {
-            padding: 50px 15px;
-            background: var(--white);
-        }
+footer{padding:80px 20px 120px;text-align:center;opacity:.6}
+</style></head>
+<body><audio id="audio" preload="none" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5f6cdb0b60.mp3">
+</audio><section class="hero">
+<div>
+<h1>Жасұлан & Альбина</h1>
+<p id="guest">Қадірлі қонақ</p>
+</div>
+</section><section class="section">
+<h2>Тойға дейін</h2>
+<div class="timer">
+<div class="box"><span id="d"></span><br>Күн</div>
+<div class="box"><span id="h"></span><br>Сағат</div>
+<div class="box"><span id="m"></span><br>Мин</div>
+<div class="box"><span id="s"></span><br>Сек</div>
+</div>
+</section><section class="section">
+<h2>Мекенжай</h2>
+<iframe src="https://www.google.com/maps?q=Palazzo%20Di%20Astana&output=embed"></iframe>
+<a class="btn gold" href="https://2gis.kz/astana/geo/70000001032123519" target="_blank">Карта ашу</a>
+</section><section class="section">
+<h2>Галерея</h2>
+<div class="gallery">
+<img loading="lazy" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500">
+<img loading="lazy" src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=500">
+</div>
+</section><section class="section">
+<h2>Той Халал өтеді</h2>
+<img width="90" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Halal_logo.svg/600px-Halal_logo.svg.png">
+</section><section class="section">
+<h2>Қатысу</h2>
+<button class="btn gold" onclick="rsvp('Иә, барамын')">Иә, барамын</button>
+<button class="btn pink" onclick="rsvp('Келе алмаймын')">Келе алмаймын</button>
+</section><footer>
+<p>Сүйіспеншілікпен жасалған</p>
+</footer><div class="controls">
+<button class="fbtn gold" id="musicBtn" onclick="toggleMusic()">Музыка</button>
+<button class="fbtn" style="background:#25D366" onclick="wish()">Тілек</button>
+</div><script>
+const name=new URLSearchParams(location.search).get('name')||'Қадірлі қонақ';
+document.getElementById('guest').innerText=name+', сізді күтеміз!';
 
-        .section-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            color: var(--gold);
-            margin-bottom: 30px;
-            text-align: center;
-        }
+function rsvp(text){
+const msg=encodeURIComponent(`Сәлеметсіз бе! Мен, ${name}. Жауабым: ${text}`);
+window.open(`https://wa.me/77472465381?text=${msg}`,'_blank');
+}
 
-        .countdown {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
+function wish(){
+const msg=encodeURIComponent(`${name}: Құтты болсын!`);
+window.open(`https://wa.me/77472465381?text=${msg}`,'_blank');
+}
 
-        .time-block {
-            background: var(--bg-color);
-            border: 1px solid rgba(184, 144, 77, 0.3);
-            padding: 15px 5px;
-            border-radius: 10px;
-            text-align: center;
-        }
+const audio=document.getElementById('audio');
+let play=false;
+function toggleMusic(){
+if(!play){audio.play();musicBtn.innerText='Өшіру'}
+else{audio.pause();musicBtn.innerText='Музыка'}
+play=!play;
+}
 
-        .time-number {
-            display: block;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--gold);
-        }
+const date=new Date("2026-08-26T18:00:00").getTime();
+function update(){
+let dff=date-Date.now();
+if(dff<0){document.querySelectorAll('.box span').forEach(e=>e.innerText='00');return}
 
-        .time-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Info Cards */
-        .info-card {
-            background: var(--white);
-            margin: 20px;
-            padding: 40px 20px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            text-align: center;
-        }
-
-        .halal-icon {
-            width: 80px;
-            margin: 20px auto;
-            display: block;
-        }
-
-        /* Map */
-        .map-container {
-            width: 100%;
-            height: 250px;
-            border-radius: 15px;
-            overflow: hidden;
-            margin: 20px 0;
-            border: 1px solid #eee;
-        }
-
-        .btn {
-            display: inline-block;
-            width: 100%;
-            max-width: 300px;
-            padding: 16px;
-            background-color: var(--gold);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            margin-top: 10px;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-rose { background-color: var(--rose); }
-
-        /* RSVP */
-        .rsvp-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .rsvp-btn {
-            padding: 15px;
-            border: 1px solid var(--rose);
-            background: var(--white);
-            color: var(--rose);
-            border-radius: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .rsvp-btn.selected {
-            background: var(--rose);
-            color: var(--white);
-        }
-
-        /* Floating Controls */
-        .controls {
-            position: fixed;
-            bottom: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 12px;
-            width: 90%;
-            max-width: 400px;
-            z-index: 1000;
-        }
-
-        .floating-btn {
-            flex: 1;
-            padding: 14px;
-            border-radius: 50px;
-            border: none;
-            color: var(--white);
-            font-weight: 600;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-            cursor: pointer;
-        }
-
-        .music-btn { background-color: var(--gold); }
-        .wish-btn { background-color: #25D366; text-decoration: none; }
-
-        footer {
-            padding: 50px 20px 120px;
-            text-align: center;
-            font-size: 0.8rem;
-            opacity: 0.6;
-        }
-
-        @media (max-width: 380px) {
-            .countdown { gap: 5px; }
-            .time-number { font-size: 1.5rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <audio id="weddingMusic" loop>
-        <source src="http://googleusercontent.com/ia800905.us.archive.org/33/items/ChristinaPerriAThousandYears/Christina%20Perri%20-%20A%20Thousand%20Years.mp3" type="audio/mpeg">
-    </audio>
-
-    <section class="hero">
-        <p class="hero-date" data-aos="fade-down">26 . 08 . 2026</p>
-        <h1 class="hero-names" data-aos="zoom-in">Жасұлан <br>& Альбина</h1>
-        <p data-aos="fade-up">Тойымыздың қадірлі қонағы болыңыз!</p>
-    </section>
-
-    <section class="timer-section" data-aos="fade-up">
-        <h2 class="section-title">Тойға дейін:</h2>
-        <div class="countdown">
-            <div class="time-block"><span class="time-number" id="days">00</span><span class="time-label">Күн</span></div>
-            <div class="time-block"><span class="time-number" id="hours">00</span><span class="time-label">Сағат</span></div>
-            <div class="time-block"><span class="time-number" id="minutes">00</span><span class="time-label">Мин</span></div>
-            <div class="time-block"><span class="time-number" id="seconds">00</span><span class="time-label">Сек</span></div>
-        </div>
-    </section>
-
-    <div class="info-card" data-aos="fade-up">
-        <h2 class="section-title">Мекен-жайымыз</h2>
-        <p class="value">Palazzo Di Astana</p>
-        <p>Астана қаласы, Сығанақ көшесі, 38</p>
-        <div class="map-container">
-            <iframe src="http://googleusercontent.com/maps.google.com/5" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <a href="http://googleusercontent.com/maps.google.com/6" class="btn">Google Maps-та ашу</a>
-    </div>
-
-    <div class="info-card" data-aos="fade-up" style="background-color: #f1f8e9;">
-        <h2 class="section-title" style="color: #2e7d32;">Той Халал өтеді</h2>
-        <p>Дастарханға алкоголь қойылмайды</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Halal_logo.svg/600px-Halal_logo.svg.png" alt="Halal" class="halal-icon">
-    </div>
-
-    <div class="info-card" data-aos="fade-up">
-        <h2 class="section-title">RSVP</h2>
-        <p>Тойға келетініңізді растауыңызды сұраймыз:</p>
-        <div class="rsvp-container">
-            <button class="rsvp-btn" onclick="setAttendance('Иә, барамын!')">Иә, барамын!</button>
-            <button class="rsvp-btn" onclick="setAttendance('Өкінішке орай, келе алмаймын')">Келе алмаймын</button>
-            <button class="btn btn-rose" onclick="sendRSVP()">Жауапты жіберу</button>
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2026 Smart Digital KZ</p>
-    </footer>
-
-    <div class="controls">
-        <button class="floating-btn music-btn" onclick="toggleMusic()">
-            <i id="musicIcon" class="fas fa-play"></i> <span id="musicText">Әуен қосу</span>
-        </button>
-        <a href="https://wa.me/77472465381?text=Сәлем! Сіздерді тойларыңызбен құттықтаймын! Бақыт тілеймін!" class="floating-btn wish-btn">
-            <i class="fab fa-whatsapp"></i> Тілек айту
-        </a>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-
-        // Timer Logic
-        const weddingDate = new Date("Aug 26, 2026 18:00:00").getTime();
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const diff = weddingDate - now;
-
-            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((diff % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = d < 10 ? "0"+d : d;
-            document.getElementById("hours").innerText = h < 10 ? "0"+h : h;
-            document.getElementById("minutes").innerText = m < 10 ? "0"+m : m;
-            document.getElementById("seconds").innerText = s < 10 ? "0"+s : s;
-        }
-        setInterval(updateCountdown, 1000);
-
-        // Music Logic
-        const music = document.getElementById("weddingMusic");
-        const musicIcon = document.getElementById("musicIcon");
-        const musicText = document.getElementById("musicText");
-        function toggleMusic() {
-            if (music.paused) {
-                music.play();
-                musicIcon.className = "fas fa-pause";
-                musicText.innerText = "Тоқтату";
-            } else {
-                music.pause();
-                musicIcon.className = "fas fa-play";
-                musicText.innerText = "Әуен қосу";
-            }
-        }
-
-        // RSVP Logic
-        let selectedResponse = "";
-        function setAttendance(resp) {
-            selectedResponse = resp;
-            const buttons = document.querySelectorAll('.rsvp-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('selected');
-                if(btn.innerText === resp) btn.classList.add('selected');
-            });
-        }
-
-        function sendRSVP() {
-            if (!selectedResponse) {
-                alert("Жауапты таңдаңыз!");
-                return;
-            }
-            const phone = "77472465381";
-            const text = `Сәлеметсіз бе! Мен тойға [${selectedResponse}] қатысамын/қатыса алмаймын.`;
-            window.location.href = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
-        }
-    </script>
-</body>
+d.innerText=Math.floor(dff/(1000*60*60*24));
+h.innerText=Math.floor((dff/(1000*60*60))%24);
+m.innerText=Math.floor((dff/(1000*60))%60);
+s.innerText=Math.floor((dff/1000)%60);
+}
+update();setInterval(update,1000);
+</script></body>
 </html>
