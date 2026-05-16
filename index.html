@@ -3,97 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Shakyru — Заманауи онлайн шақыртулар жасау</title>
-    <meta name="description" content="Қазақстандағы ең үздік онлайн шақыртулар. Той, ұзату, мерейтойға арналған электронды шақыру билеттері. 5 минутта жасап береміз.">
-    <meta name="keywords" content="онлайн шақырту, электронды шақыру, тойға шақыру, онлайн пригласительные, Қазақстан, Астана">
+    <title>SHAQYRU PRO — Эксклюзивті цифрлық шақыртулар</title>
+    <meta name="description" content="Үйлену той, Қыз ұзату және Мерейтойларға арналған премиум деңгейдегі онлайн шақыртулар жасау.">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
         body { font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
-        .gradient-text { background: linear-gradient(90deg, #b8860b, #daa520); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gold-bg { background: linear-gradient(135deg, #d4af37 0%, #f9f295 50%, #b8860b 100%); }
+        .gold-text { background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-shadow { box-shadow: 0 20px 50px rgba(0,0,0,0.05); }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-[#fffdfa] text-[#2c2c2c]">
 
-    <header class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl font-bold tracking-tighter uppercase">Damir <span class="text-amber-600">Digital</span></h1>
-            <a href="#order" class="bg-amber-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-amber-700 transition">Тапсырыс беру</a>
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-gold/10">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-widest uppercase">SHAQYRU <span class="text-[#b8860b]">PRO</span></div>
+            <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-wider">
+                <a href="#services" class="hover:text-[#b8860b] transition">Қызметтер</a>
+                <a href="#marketing" class="hover:text-[#b8860b] transition">Артықшылықтар</a>
+                <a href="#pricing" class="hover:text-[#b8860b] transition">Пакеттер</a>
+            </div>
+            <a href="https://wa.me/77472465381" class="gold-bg text-white px-6 py-2 rounded-full text-xs font-bold uppercase">Кеңес алу</a>
         </div>
-    </header>
+    </nav>
 
-    <section class="pt-32 pb-20 px-6 text-center">
-        <h2 class="text-4xl md:text-6xl font-bold mb-6">Ерекше сәттеріңізге <br><span class="gradient-text">Заманауи шақыртулар</span></h2>
-        <p class="text-gray-600 max-w-2xl mx-auto mb-10 text-lg">Той, ұзату, туған күн және басқа да мерекелерге арналған интерактивті шақыру билеттері. Қонақтарыңызды таң қалдырыңыз!</p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="#portfolio" class="border-2 border-gray-900 px-8 py-3 rounded-full font-bold hover:bg-gray-900 hover:text-white transition">Жұмыстарды көру</a>
-            <a href="#order" class="bg-amber-600 text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-amber-200 hover:bg-amber-700 transition">Бағасын білу</a>
+    <section class="pt-40 pb-20 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-8">Мерекеңіздің беделі <br><span class="gold-text italic">Шақыртудан басталады</span></h1>
+            <p class="text-xl text-gray-500 mb-12 max-w-2xl mx-auto font-light">Біз жай ғана сайт жасамаймыз. Біз сіздің қуанышыңыздың алғашқы әсерін кәсіби деңгейде қалыптастырамыз.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="#services" class="bg-[#2c2c2c] text-white px-10 py-4 rounded-full font-bold transition hover:bg-black uppercase text-sm tracking-widest">Үлгілерді көру</a>
+                <a href="#pricing" class="border-2 border-[#b8860b] text-[#b8860b] px-10 py-4 rounded-full font-bold transition hover:bg-[#b8860b] hover:text-white uppercase text-sm tracking-widest">Бағасын білу</a>
+            </div>
         </div>
     </section>
 
-    <section id="portfolio" class="py-20 bg-white px-6">
-        <div class="max-w-6xl mx-auto">
-            <h3 class="text-3xl font-bold mb-12 text-center">Дайын үлгілер</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition">
-                    <div class="h-48 bg-amber-50 flex items-center justify-center">
-                        <span class="text-amber-600 font-bold uppercase tracking-widest">Той Шақырту</span>
+    <section id="marketing" class="py-24 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-16">
+                <div class="text-center">
+                    <div class="text-4xl mb-6">✨</div>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-wider">Эксклюзивті Дизайн</h3>
+                    <p class="text-gray-500 leading-relaxed">Әр шақырту — авторлық жұмыс. Біз шаблонмен шектелмей, сіздің талғамыңызға сай бірегей стиль жасаймыз.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-6">📊</div>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-wider">Қонақтарды Басқару</h3>
+                    <p class="text-gray-500 leading-relaxed">Кім келеді, кім келмейді? Барлық жауаптар автоматты түрде жиналып, сізге есеп ретінде беріледі.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-6">🎵</div>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-wider">Эмоция Сыйлау</h3>
+                    <p class="text-gray-500 leading-relaxed">Интерактивті карта, әуезді музыка және фото-галерея қонақтарды мереке атмосферасына алдын-ала бөлейді.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 px-6 bg-[#fcfaf7]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 uppercase">Біздің Бағыттар</h2>
+            
+            <div class="space-y-32">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="flex-1">
+                        <div class="text-sm text-[#b8860b] font-bold mb-4 tracking-widest uppercase">01. Салтанатты Шара</div>
+                        <h3 class="text-4xl font-bold mb-6 italic">Үйлену Той</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed text-lg">Махаббат хикаяңызды цифрлық форматта баяндаңыз. Бұл шақыртуда таймер, ресторанға навигация, махаббат тарихы мен қонақтардың тілегін жазу бөлімі қарастырылған.</p>
+                        <ul class="mb-8 space-y-2 text-gray-500">
+                            <li>• Авторлық музыкалық сүйемелдеу</li>
+                            <li>• Фото және Видео галерея</li>
+                            <li>• WhatsApp арқылы RSVP-растау</li>
+                        </ul>
+                        <a href="/my-website/shakyru" class="inline-block border-b-2 border-[#b8860b] pb-1 font-bold uppercase text-sm tracking-widest">Үлгіні ашу</a>
                     </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-xl mb-2">Классикалық үйлену тойы</h4>
-                        <p class="text-gray-500 text-sm mb-4">Таймер, карта, музыка және WhatsApp растау функциясы бар.</p>
-                        <a href="/my-website/shakyru" class="text-amber-600 font-semibold hover:underline">Көру →</a>
+                    <div class="flex-1 w-full h-[500px] bg-gray-200 rounded-2xl overflow-hidden card-shadow">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Wedding">
                     </div>
                 </div>
-                <div class="group border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition">
-                    <div class="h-48 bg-blue-50 flex items-center justify-center">
-                        <span class="text-blue-600 font-bold uppercase tracking-widest">Бизнес Landing</span>
+
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                    <div class="flex-1">
+                        <div class="text-sm text-[#b8860b] font-bold mb-4 tracking-widest uppercase">02. Қыз Ұзату</div>
+                        <h3 class="text-4xl font-bold mb-6 italic">Қыз Ұзату</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed text-lg">Ұлттық нақыштағы нәзік дизайн. Қыздың сыңсуы мен әсем фотоларын біріктіретін заманауи парақша.</p>
+                        <ul class="mb-8 space-y-2 text-gray-500">
+                            <li>• Ұлттық стильдегі элементтер</li>
+                            <li>• Каспий аударым (Сыйлықтарға)</li>
+                            <li>• Арнайы Дресс-код бөлімі</li>
+                        </ul>
+                        <a href="#" class="inline-block border-b-2 border-[#b8860b] pb-1 font-bold uppercase text-sm tracking-widest">Үлгіні ашу</a>
                     </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-xl mb-2">Кофехана немесе Ресторан</h4>
-                        <p class="text-gray-500 text-sm mb-4">Меню, галерея және мекен-жай көрсетілген кәсіби сайт.</p>
-                        <a href="https://damir02kzzz.github.io/my-website" class="text-blue-600 font-semibold hover:underline">Көру →</a>
+                    <div class="flex-1 w-full h-[500px] bg-gray-200 rounded-2xl overflow-hidden card-shadow">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Farewell">
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="flex-1">
+                        <div class="text-sm text-[#b8860b] font-bold mb-4 tracking-widest uppercase">03. Мерейтой</div>
+                        <h3 class="text-4xl font-bold mb-6 italic">Туған Күн & Юбилей</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed text-lg">Жарқын, динамикалық және көңілді дизайн. Достарыңыз бен туыстарыңызға ерекше форматта хабарлаңыз.</p>
+                        <ul class="mb-8 space-y-2 text-gray-500">
+                            <li>• Қонақтарға арналған карта</li>
+                            <li>• Интерактивті сұрақ-жауап</li>
+                            <li>• Видео-шақыру мүмкіндігі</li>
+                        </ul>
+                        <a href="#" class="inline-block border-b-2 border-[#b8860b] pb-1 font-bold uppercase text-sm tracking-widest">Үлгіні ашу</a>
+                    </div>
+                    <div class="flex-1 w-full h-[500px] bg-gray-200 rounded-2xl overflow-hidden card-shadow">
+                        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Birthday">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="order" class="py-20 bg-gray-900 text-white px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h3 class="text-3xl font-bold mb-12">Қызмет құны</h3>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-gray-800 p-8 rounded-3xl border border-gray-700">
-                    <h4 class="text-xl mb-4 text-gray-400">Стандарт</h4>
-                    <div class="text-4xl font-bold mb-6">5 000 ₸</div>
-                    <ul class="text-left space-y-3 mb-8 text-sm">
-                        <li>• Дайын шаблон бойынша</li>
-                        <li>• Таймер мен Карта</li>
-                        <li>• WhatsApp растау</li>
-                        <li>• 24 сағатта дайын</li>
+    <section id="pricing" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 uppercase tracking-widest">Тарифтік Пакеттер</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="border border-gray-100 p-10 rounded-3xl text-center card-shadow bg-white">
+                    <h4 class="text-lg font-bold mb-4">BASIC</h4>
+                    <div class="text-4xl font-bold mb-8 italic">10 000 ₸</div>
+                    <ul class="text-gray-500 space-y-4 mb-10 text-sm">
+                        <li>Дайын үлгілер жинағы</li>
+                        <li>Таймер және Ресторан Картасы</li>
+                        <li>WhatsApp растау батырмасы</li>
+                        <li>3 күнде дайын болады</li>
                     </ul>
-                    <a href="https://wa.me/77472465381?text=Сәлеметсіз бе! Стандарт шақыртуға тапсырыс бергім келеді." class="block w-full bg-white text-gray-900 py-3 rounded-xl font-bold hover:bg-gray-200">Тапсырыс беру</a>
+                    <a href="https://wa.me/77472465381?text=BASIC пакетіне тапсырыс" class="block py-4 border border-black rounded-full font-bold uppercase text-xs tracking-widest hover:bg-black hover:text-white transition">Тапсырыс беру</a>
                 </div>
-                <div class="bg-amber-600 p-8 rounded-3xl relative overflow-hidden">
-                    <div class="absolute top-4 right-4 bg-white text-amber-600 text-[10px] font-bold px-2 py-1 rounded">ХИТ</div>
-                    <h4 class="text-xl mb-4 text-amber-100">Премиум</h4>
-                    <div class="text-4xl font-bold mb-6">15 000 ₸</div>
-                    <ul class="text-left space-y-3 mb-8 text-sm">
-                        <li>• Жеке дизайн</li>
-                        <li>• Музыкалық сүйемелдеу</li>
-                        <li>• Каспий аударым бөлімі</li>
-                        <li>• 12 сағатта дайын</li>
+                <div class="bg-[#2c2c2c] text-white p-10 rounded-3xl text-center card-shadow relative scale-105">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-[#b8860b] text-[10px] px-4 py-1 rounded-b-lg font-bold">КӨП ТАҢДАЛАТЫН</div>
+                    <h4 class="text-lg font-bold mb-4">STANDARD</h4>
+                    <div class="text-4xl font-bold mb-8 italic text-[#b8860b]">25 000 ₸</div>
+                    <ul class="text-gray-300 space-y-4 mb-10 text-sm">
+                        <li>Жеке түстер мен қаріптер</li>
+                        <li>Музыкалық сүйемелдеу</li>
+                        <li>Фото-галерея (10 суретке дейін)</li>
+                        <li>24 сағатта дайын болады</li>
                     </ul>
-                    <a href="https://wa.me/77472465381?text=Сәлеметсіз бе! Премиум шақыртуға тапсырыс бергім келеді." class="block w-full bg-gray-900 text-white py-3 rounded-xl font-bold hover:bg-black">Тапсырыс беру</a>
+                    <a href="https://wa.me/77472465381?text=STANDARD пакетіне тапсырыс" class="block py-4 gold-bg text-white rounded-full font-bold uppercase text-xs tracking-widest">Тапсырыс беру</a>
+                </div>
+                <div class="border border-gray-100 p-10 rounded-3xl text-center card-shadow bg-white">
+                    <h4 class="text-lg font-bold mb-4">VIP CUSTOM</h4>
+                    <div class="text-4xl font-bold mb-8 italic">50 000 ₸</div>
+                    <ul class="text-gray-500 space-y-4 mb-10 text-sm">
+                        <li>Нөлден жасалған бірегей дизайн</li>
+                        <li>Екі тілде (Қазақша / Орысша)</li>
+                        <li>Анимациялық эффектілер</li>
+                        <li>12 сағат ішінде дайын</li>
+                    </ul>
+                    <a href="https://wa.me/77472465381?text=VIP пакетіне тапсырыс" class="block py-4 border border-black rounded-full font-bold uppercase text-xs tracking-widest hover:bg-black hover:text-white transition">Тапсырыс беру</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-10 border-t text-center">
-        <p class="text-gray-400 text-sm">© 2026 Damir Digital Invites. Барлық құқықтар қорғалған.</p>
-    </header>
+    <footer class="py-20 bg-[#fcfaf7] border-t px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="text-2xl font-bold tracking-widest uppercase mb-6 md:mb-0">SHAQYRU <span class="text-[#b8860b]">PRO</span></div>
+            <p class="text-gray-400 text-sm">© 2026 SHAQYRU PRO. Барлық құқықтар қорғалған. Маман: Дамир</p>
+        </div>
+    </footer>
 
 </body>
 </html>
