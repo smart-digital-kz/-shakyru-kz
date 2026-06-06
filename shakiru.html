@@ -3,78 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Найриятқа арнау ✨</title>
+    <title>Кездесу туралы ақпарат</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400&display=swap');
-
-        body {
-            margin: 0;
-            background: #1a0f0f; /* Lou Lou стиліндегі терең қызыл/қара реңк */
-            color: #f4e4d7;
-            font-family: 'Montserrat', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .container {
-            padding: 40px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 20px;
-            background: rgba(40, 20, 20, 0.8);
-            backdrop-filter: blur(10px);
-            max-width: 500px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #d4af37; /* Алтын түс */
-            margin-bottom: 10px;
-        }
-
-        p { font-size: 1.2rem; line-height: 1.6; margin-bottom: 30px; }
-
-        .date {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #fff;
-            border-bottom: 2px solid #d4af37;
-            display: inline-block;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            background: #d4af37;
-            color: #1a0f0f;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn:hover { background: #fff; transform: scale(1.05); }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        :root { --accent: #8c8c8c; --bg: #121212; --text: #dcdcdc; }
+        body { background: var(--bg); color: var(--text); font-family: 'Arial', sans-serif; margin: 0; line-height: 1.5; padding: 20px; }
+        .container { max-width: 600px; margin: 40px auto; border: 1px solid #333; padding: 40px; }
+        h1 { font-size: 1.5rem; color: #fff; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .timer { font-size: 1.2rem; color: var(--accent); margin: 20px 0; }
+        .info-box { margin: 30px 0; }
+        .map-box { margin-top: 30px; border: 1px solid #333; }
+        iframe { width: 100%; height: 300px; display: block; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Найрият ✨</h1>
-    <p>Сені "Lou Lou"-дың ерекше атмосферасында кездесуге шақырғым келеді.</p>
-    <div class="date">07.06.2026</div>
-    <p>Бұл кеш тек біз үшін болады.</p>
-    <button class="btn" onclick="alert('Найрият, жауабыңды күтемін! ❤️')">Келісемін!</button>
+    <h1>Кездесу шақыруы</h1>
+    <p>Найрият, сені алдағы уақытта кездесуге шақырамын. Мақсатым — жай ғана әңгімелесіп, уақытты сапалы өткізу.</p>
+    
+    <div class="timer" id="timer">Есептелуде...</div>
+
+    <div class="info-box">
+        <p><strong>Орны:</strong> Lou Lou мейрамханасы, Достық көшесі, 13.</p>
+        <p><strong>Уақыты:</strong> 07.06.2026, сағат 19:00.</p>
+    </div>
+
+    <div class="map-box">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.750529532508!2d71.4283592!3d51.1274944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4245855f75e2f181!2z0YPQuy4g0JTQvtGB0YLRgNCw0YgsIDEz!5e0!3m2!1sru!2skz" allowfullscreen="" loading="lazy"></iframe>
+    </div>
 </div>
+
+<script>
+    const targetDate = new Date("June 7, 2026 19:00:00").getTime();
+    function update() {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+        if (diff <= 0) {
+            document.getElementById("timer").innerHTML = "Кездесу уақыты жетті.";
+            return;
+        }
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById("timer").innerHTML = `Кездесуге дейін: ${days} күн, ${hours} сағат қалды.`;
+    }
+    setInterval(update, 1000);
+    update();
+</script>
 
 </body>
 </html>
-
